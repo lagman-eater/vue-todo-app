@@ -44,7 +44,7 @@ npm run serve -> Запустите приложение
 Приложение будет доступно по адресу: http://localhost:8080.
 
 Также есть задеплоинная версия vercel:
-https://vue-todo-app-bice.vercel.app/
+https://vue-todo-app-bice.vercel.app
 
 Разработчик
 Дюшембиев Айдар
