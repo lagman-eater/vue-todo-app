@@ -2,6 +2,7 @@
   <div class="todo-main">
     <div class="todo-main-container">
       <h1 class="todo-main__title">TodoApp</h1>
+      <TodoCreate />
       <TodoList
         :todos="filteredTodos"
         @toggleTodo="toggleTodo"
@@ -20,9 +21,10 @@
 import { mapState, mapGetters, mapActions } from "vuex";
 import TodoFilters from "./components/TodoFilters";
 import TodoList from "./components/TodoList";
+import TodoCreate from "./components/TodoCreate";
 
 export default {
-  components: { TodoFilters, TodoList },
+  components: { TodoFilters, TodoList, TodoCreate },
   computed: {
     ...mapState(["filter"]),
     ...mapGetters(["filteredTodos", "remainingTodos"]),
