@@ -33,6 +33,15 @@ export default new Vuex.Store({
     clearCompleted(state) {
       state.todos = state.todos.filter((todo) => !todo.completed);
     },
+    deleteTodo(state, id) {
+      state.todos = state.todos.filter((todo) => todo.id !== id); // Также добавляем удаление тудушки через filter
+    },
+    editTodo(state, { id, newTitle }) {
+      const todo = state.todos.find((todo) => todo.id === id); // Тудушку которую находим через редактирование находим через find
+      if (todo) {
+        todo.title = newTitle; // Даём тудушке новый текст, меняем содержимое 
+      }
+    },
   },
   actions: {
     async fetchTodos({ commit }) {
@@ -49,6 +58,9 @@ export default new Vuex.Store({
         commit("setError", error.message);
         commit("setStatus", "error");
       }
+    },
+    editTodo({ commit }, { id, newTitle }) {
+      commit("editTodo", { id, newTitle });
     },
   },
   getters: {
