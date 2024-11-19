@@ -14,8 +14,8 @@
       <TodoEdit v-if="isEditing" :todo="todo" @closeEdit="closeEdit" />
     </label>
     <div>
-      <button @click="editTodo" class="todo-item__button">Edit</button>
-      <button @click="deleteTodo" class="todo-item__button">Delete</button>
+      <button @click="editTodo" class="todo-item__button"><i class="material-icons">edit</i></button>
+      <button @click="deleteTodo" class="todo-item__button"><i class="material-icons">delete</i></button>
     </div>
   </li>
 </template>
